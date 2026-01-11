@@ -1,0 +1,2 @@
+This is a current PROGRESS snap shot of the KG-OS Pro system. It is NOT YET in release form but is simply a preview of the current progress. The next thing that will be finalized will be editing existing filament profiles, then adding/deleting filament profiles, and
+finally getting it fully universal by adding a "setup wizard" that will ask the user a few questions about the physical hardware of their printer to allow certain macros to change their behavior as necessary.
