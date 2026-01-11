@@ -1,0 +1,61 @@
+[gcode_macro _REC_LOAD_MESH]
+gcode:
+
+     {% set svv = printer.save_variables.variables %}
+
+     {% set ext_target = svv.act_ext_target|default(0)|int %}
+     {% set bed_target = svv.act_bed_target|default(0)|int %}
+     {% set act_fil = svv.act_fil|default(0)|int %}
+
+     {% if act_fil == 1 %}
+
+           {% if 'asa_profile' in printer.bed_mesh.profiles %}
+              BED_MESH_PROFILE LOAD=asa_profile
+
+           {% else %}
+
+              BED_MESH_PROFILE LOAD=default
+
+           {% endif %}
+
+      {% elif act_fil == 2 %}
+
+           {% if 'asacf_profile' in printer.bed_mesh.profiles %}
+
+              BED_MESH_PROFILE LOAD=asacf_profile
+
+           {% else %}
+
+              BED_MESH_PROFILE LOAD=default
+
+           {% endif %}
+
+      {% elif act_fil == 3 %}
+
+           {% if 'abs_profile' in printer.bed_mesh.profiles %}
+
+              BED_MESH_PROFILE LOAD=abs_profile
+
+           {% else %}
+
+              BED_MESH_PROFILE LOAD=default
+
+           {% endif %}
+
+      {% elif act_fil == 4 %}
+
+           {% if 'petg_profile' in printer.bed_mesh.profiles %}
+
+              BED_MESH_PROFILE LOAD=petg_profile
+
+           {% else %}
+
+              BED_MESH_PROFILE LOAD=default
+              
+           {% endif %}
+
+      {% else %}
+
+           BED_MESH_PROFILE LOAD=default
+
+      {% endif %}
