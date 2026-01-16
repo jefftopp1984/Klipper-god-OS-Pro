@@ -7,4 +7,4 @@ System is ready for transfer tests to other printers. Features include Filament 
 
 Update 01-16-2026:
 
-Fixed a minor bug in the filament profile change/delete and prohibited deletion of current profile to prevent a "ghost state" of the printer where a deleted profile is still in active memory. Will be continuing to test the system before final release.
+Fixed a few minor bugs in the filament profile change/delete and messages that were called that were redundant, then prohibited deletion of current profile to prevent a "ghost state" of the printer where a deleted profile is still in active memory. Will be continuing to test the system before final release.
