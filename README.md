@@ -8,3 +8,7 @@ System is ready for transfer tests to other printers. Features include Filament 
 Update 01-16-2026:
 
 Fixed a few minor bugs in the filament profile change/delete and messages that were called that were redundant, then prohibited deletion of current profile to prevent a "ghost state" of the printer where a deleted profile is still in active memory. Will be continuing to test the system before final release.
+
+Update 01-17-2026:
+
+Found and corrected bug that if user selects yes to leveling bed during initialization and the printer passes the Z gap check before leveling the bed without needing adjustment, the printer will erroneously level the bed on the next initialization even if the user selects no to leveling bed on that initialization. Found that the command to reset the variable was placed in the incorrect place and would not be reset if the printer passed the gap check without needing adjustment. Relocated the command to reset the variable so this no longer happens.
